@@ -135,8 +135,58 @@ where $\theta_1$ is the angle of incident, $\theta_2$ is the angle of refraction
 
 \subsubsection{Fresnel coefficients and phases}
 
-TODO
+The Frensel coefficient describes the portion of the electric field, which gets reflected/transmitted at the interface between two dielectrica. The Fresnel coefficients are functions of the angle of incidence and material properties of the two dielectrics. Further, Fressnel phases are determined from the Fressnel coefficients using the following relation
 
+\begin{align}
+r = e^{-2i\phi}~.
+\end{align}
+
+We begin by analyzing the TE polarized waves. Referring to figure \ref{fig:FressnelCoefficients} the $E_{1i}$ , $E_{1r}$ , $E_{2t}$ are complex values of incident, reflected and transmitted electric fields in medium 1 and 2.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/FressnelCoefficients.png}
+    \caption{Fresnel reflection for TE polarization. Directions of vectors for TE polarized wave. From \cite{wartak2013computational}.}
+    \label{fig:FressnelCoefficients}
+\end{figure}
+
+A full derivation of the equation can be found in \cite{wartak2013computational} Chapter 3.6.1. The Fressnel coefficient for TE polarized waves is given by
+
+\begin{align}
+r_{TE} = \frac{n_1 \cos \theta_1 - \sqrt{n_2^2 - n_1^2 \cos \theta_1}}{n_1 \cos \theta_1 - \sqrt{n_2^2 + n_1^2 \cos \theta_1}}~.
+\end{align}
+
+Note, that the square root becomes negative for angles $\theta_1$ such that $n_2^2 - n_1^2 \cos \theta_1 < 0$ and there the coefficient becomes complex. A complex coefficient implies absorption of the material. The Fressnel phase is given by the equation
+
+\begin{align}
+\tan \phi_{TE} = \frac{\sqrt{n_1^2 \sin^2 \theta_1 - n_2^2}}{n_1 \cos \theta_1} ~.
+\end{align}
+
+The above equation represents phase shift during reflection for TE polarized electromagnetic wave.
+
+The same calculation can be done for a TM polarizied wave. Here the coefficient is given by
+
+\begin{align}
+r_{Tm} = \frac{n_2 \cos \theta_1 - \sqrt{n_1^2 - n_2^2 \cos \theta_1}}{n_2 \cos \theta_1 - \sqrt{n_1^2 + n_2^2 \cos \theta_1}}~,
+\end{align}
+
+and the Fressnel phase is given by
+
+\begin{align}
+\tan \phi_{TM} = \frac{n_1^2}{n_2^2} \frac{\sqrt{n_1^2 \sin^2 \theta_1 - n_2^2}}{n_1 \cos \theta_1} ~.
+\end{align}
+
+An example of the Fressnel coefficients for the air-glass reflection with $n =  1.5$ is given in figure \ref{fig:FressnelReflectionCoef}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/FressnelReflectionCoef.png}
+    \caption{Reflections of TE and TM modes for external reflection with $n = 1.5$. Brewster’s angle $\theta_B$ is also shown. From \cite{wartak2013computational}.}
+    \label{fig:FressnelReflectionCoef}
+\end{figure}
+
+Note that there is an angle, where the TM polarized wave gets not reflected. This angle is called Brewster’s angle $\theta_B$ and can be used to polarize light.
 
 \subsubsection{Bragg Equation}
 
