@@ -1,1 +1,17 @@
+# Not include the PyCharm files
 /.idea
+
+# Not include the LaTeX intermediate files
+*.aux
+*.log
+*/main.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# Build directories
+_build/
+latex.out/
