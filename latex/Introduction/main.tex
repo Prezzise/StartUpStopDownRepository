@@ -1,0 +1,106 @@
+
+\documentclass[a4paper,DIV13,12pt]{scrartcl} %gibt den dokumenttyp an (auch book, report, sildes,...)hier: Komascript Artikel
+
+% Um verschiedene Arten von Latex - Befehlen anwenden zu können, müssen die jeweiligen Pakete (die eben diese Behfehle beinhalten) aufgerufen werden. Das passiert mit \usepackage[?]{?}. 
+%In folgendem Dokument, werden diese Pakete verwendet:
+
+\usepackage[utf8]{inputenc} %Die anderen funktionieren nicht
+%\usepackage{ngerman}             % neue Rechtschreibung, Dokument auf deutsch
+\usepackage{float}							% figure-Umgebung im Text verankern können
+\usepackage[pdftex]{graphics}    % Treiber zum Einbinden von Bildern 
+\usepackage{graphicx}            % Treiber zum Einbinden von Bildern (jpg)
+\usepackage{amsmath}             % American Mathematical Society Package
+\usepackage[bf]{caption}         % Bildunterschriftenformatierung
+\usepackage{siunitx} 			  % Paket für Einbindung von SI Einheiten - es geht auch ohne, aber Vorteil eines solchen Pakets ist, es wird einheitlich 									  %	formatiert  
+\sisetup{separate-uncertainty=true,
+exponent-product = \cdot,
+} % durch diese Parameter wird bewirkt, dass Fehlerangaben in der von uns bevorzugten Weise erfolgen, also (Wert +- Fehler) Einheit
+\usepackage[automark]{scrlayer-scrpage}	 % Spezielle Kopf- und Fußzeilen; automark=automatische Aktualisierung der Kapitel
+\usepackage{color}
+\usepackage{fancybox}	% Farben z.B. für Textboxen
+\usepackage[colorlinks,	% Farben der Links -> diese werden dann mit \url{} gekennzeichnet (sh. Literaturverzeichnis)
+						linkcolor=blue,
+						urlcolor=blue]{hyperref}
+						
+\usepackage{bbold} % Einheitsmatrix
+
+\usepackage{layout} % To change the layout
+
+% thicker lines in tables
+\usepackage{makecell}
+
+% thicker veritcal line in table
+\usepackage{array}
+\newcolumntype{?}{!{\vrule width 2pt}}
+
+% einheitsmatrix
+\usepackage{dsfont}
+
+% slash notation
+\usepackage{slashed}
+
+%\definecolor{hellgrau}{gray}{0.85}	% Man kan eigene Farbmischungen, definieren 
+
+\setlength{\parindent}{0cm}	% Absätze statt Einrückung Zeilenabstand -> das ist allerdings reine Geschmacksache; Man kann den befehl auch weglassen, dann werden die default Einstellungen genommen
+\setlength{\parskip}{0.5cm}                       
+
+\restylefloat{figure}	% Dieser Befehl gilt für alle Gleitumgebungen (float) -> Bilder. Aktivierung des \usepackage{float} 
+
+%\ohead{\headmark}	% Kopfzeile - Achtung bei zweiseitigem Layout
+\chead{}
+\ihead{References for the Start Up}	
+
+
+% Ermöglich subfigure
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[export]{adjustbox}
+
+%ermöglich einheit angstrong
+\usepackage{siunitx}
+
+%braket notation
+\usepackage{braket}
+
+\ofoot{}
+\cfoot{-~\pagemark~-}	%Fußzeile, zentriert
+% \ifoot{Latex Fußzeile oder Protokolltitel} % Falls Fußzeile erwünscht, Text in die sehschweiften Klammern
+
+\setheadsepline{0.4pt}	% Kopf-Linie zeichnen
+						
+\pagestyle{scrheadings}	% Kopf und Fußzeilen für das ganze Dokument verwenden
+
+
+
+\title{Introduction and theoretical background}
+
+
+\begin{document} % Beginn des Dokuments
+%\setcounter{section}{-1} % Start mit Kapitel 0
+
+%-------------------------------------------------
+%------------Begin of the document ----------------------
+%-------------------------------------------------
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\input{sections/todo}
+\newpage
+\input{sections/theory}
+
+
+
+
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{refs} % Entries are in the refs.bib file
+
+
+
+
+ \end{document} % zeigt das Ende des Dokuments an
+ 
+
